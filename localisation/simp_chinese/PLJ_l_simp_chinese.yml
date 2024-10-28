@@ -1,0 +1,91 @@
+﻿l_simp_chinese:
+ show_build_queue:0 "显示批量建造建筑"
+ show_build_queue_desc:0 "通过这一决议，您可以在不同省份自动排队建造多个选定的建筑物。 §Y点击下面的按钮§! §G显示§! §Y决议§!"
+
+ plj_show_tooltip:0 "§G打开§! 批量建造建筑 窗口"
+ plj_hide_tooltip:0 "§R关闭§! 批量建造建筑 窗口"
+
+ build_queue:0 "批量建造"
+ build_queue_desc:0 "通过这项决议，您可以在不同省份自动排队建造多个选定的建筑物或基础设施"
+
+ auto_queue_5:0 "§G5x§! | §R10x§! | §R25x§! 将自动排队数量切换为 §Y10x§! 个"
+ auto_queue_10:0 "§R5x§! | §G10x§! | §R25x§! 将自动排队数量切换为 §Y25x§! 个"
+ auto_queue_25:0 "§R5x§! | §R10x§! | §G25x§! 将自动排队数量切换为 §Y5x§! 个"
+
+ plj_building_type:0 "选择 §Y建筑类别§!"
+ plj_quantity_construction:0 "批量建造数量:"
+
+ aqr_current_quantity:0 "[GetCurrentQuantity]"
+
+ plj_factory_current_quantity_5:0 "§G5x§! | §R10x§! | §R25x§!"
+ plj_factory_current_quantity_10:0 "§R5x§! | §G10x§! | §R25x§!"
+ plj_factory_current_quantity_25:0 "§R5x§! | §R10x§! | §G25x§!"
+
+ plj_refineries_current_quantity_3:0 "§G3x§! | §R6x§! | §R10x§!"
+ plj_refineries_current_quantity_6:0 "§R3x§! | §G6x§! | §R10x§!"
+ plj_refineries_current_quantity_10:0 "§R3x§! | §R6x§! | §G10x§!"
+
+ plj_special_current_quantity_2:0 "§G2x§! | §R4x§! | §R6x§!"
+ plj_special_current_quantity_4:0 "§R2x§! | §G4x§! | §R6x§!"
+ plj_special_current_quantity_6:0 "§R2x§! | §R4x§! | §G6x§!"
+
+ plj_current_quantity_tooltip:0 "§G绿色§! 为当前要建造的建筑物数量"
+
+ increase_quantity_button:0 "§G增加§! 当前数量"
+ decrease_quantity_button:0 "§R减少§! 当前数量"
+ 
+ hide_plj_decision_text:0 "§R隐藏§! 决议"
+ unhide_plj_decision:0 "§G打开§! 批量建造"
+
+ select_factory_text:0 "[GetSelectFactory]"
+ selected_factory_text:0 "§Y工厂和船坞§!"
+ deselect_factory_text:0 "工厂和船坞"
+
+ select_refineries_text:0 "[GetSelectRefineries]"
+ selected_refineries_text:0 "§Y储油罐和合成炼油厂§!"
+ deselect_refineries_text:0 "储油罐和合成炼油厂"
+
+ select_special_text:0 "[GetSelectSpecial]"
+ selected_special_text:0 "§Y特殊建筑§!"
+ deselect_special_text:0 "特殊建筑"
+
+ plj_select_factory_tooltip:0 "用于§O民用工厂§!、§G军用工厂§!、§3海军船坞§!和§O基础设施§!的§Y批量建造§!选项"
+ plj_select_refineries_tooltip:0 "用于§8储油罐§!和§G合成炼油厂§!的§Y批量建造§!选项"
+ plj_select_special_tooltip:0 "用于§9核反应堆§!和§G火箭基地§!的§Y批量建造§!选项"
+
+ plj_tt_queue_industrial_complex:0 "开始建造 §Y民用工厂§!"
+ plj_tt_queue_arms_factory:0 "开始建造 §Y军用工厂§!"
+ plj_tt_queue_dockyard:0 "开始建造 §Y海军船坞§!"
+ plj_tt_queue_infrastructure:0 "开始建造 §Y基础设施§!"
+
+ build_queue_industrial_complex:0 "批量建造 [GetCurrentNumberFactory] §O民用工厂§!"
+ build_queue_arms_factory:0 "批量建造 [GetCurrentNumberFactory] §G军用工厂§!"
+ build_queue_dockyard:0 "批量建造 [GetCurrentNumberFactory] §3海军船坞§!"
+ build_queue_infrastructure:0 "批量建造 [GetCurrentNumberFactory] §O基础设施§!"
+
+ plj_tt_queue_fuel_silo:0 "开始建造 §Y储油罐§!"
+ plj_tt_queue_synthetic_refinery:0 "开始建造 §Y合成炼油厂§!"
+
+ build_queue_fuel_silo:0 "批量建造 [GetCurrentNumberRefineries] §8储油罐§!"
+ build_queue_synthetic_refinery:0 "批量建造 [GetCurrentNumberRefineries] §g合成炼油厂§!"
+
+ plj_tt_queue_nuclear_reactor:0 "开始建造 §Y核反应堆§!"
+ plj_tt_queue_rocket_site:0 "开始建造 §Y火箭基地§!"
+
+ build_queue_nuclear_reactor:0 "批量建造 [GetCurrentNumberSpecial] §9核反应堆§!"
+ build_queue_rocket_site:0 "批量建造 [GetCurrentNumberSpecial] §g火箭基地§!"
+
+ current_number_factory:0 "[GetCurrentNumberFactory]"
+ current_number_factory_5:0 "§Y5x§!"
+ current_number_factory_10:0 "§Y10x§!"
+ current_number_factory_25:0 "§Y25x§!"
+
+ current_number_refineries:0 "[GetCurrentNumberRefineries]"
+ current_number_refineries_3:0 "§Y3x§!"
+ current_number_refineries_6:0 "§Y6x§!"
+ current_number_refineries_10:0 "§Y10x§!"
+
+ current_number_special:0 "[GetCurrentNumberSpecial]"
+ current_number_special_2:0 "§Y2x§!"
+ current_number_special_4:0 "§Y4x§!"
+ current_number_special_6:0 "§Y6x§!"

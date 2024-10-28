@@ -1,0 +1,410 @@
+scripted_gui = {
+	plj_ui = {
+		context_type = player_context
+		parent_window_token = construction_tab
+		window_name = "plj_ui_window"
+		visible = {
+			IF = {
+				limit = {
+				check_variable = { show_plj = 1 }
+				}
+			always = yes
+			}
+			ELSE = {
+				always = no
+			}
+		}
+		properties = {
+		}
+		effects = {
+
+			close_plj_ui_button_click = {
+				ROOT = {
+					set_temp_variable = { show = 1 }
+					subtract_from_temp_variable = { show = show_plj }
+					set_variable = { show_plj = show }
+				}
+			}
+
+			increase_quantity_click = {
+
+				plj_increase_quantity = yes
+
+			}
+
+			decrease_quantity_click = {
+
+				plj_decrease_quantity = yes
+			}
+
+			hide_plj_decision_click = {
+				IF = {
+					limit = {
+						NOT = { 
+							has_country_flag = hide_build_queue_decisions 
+						} 
+					}
+					set_country_flag = hide_build_queue_decisions
+				}
+			
+			}
+
+			select_factory_click = {
+				IF = {
+					limit = {
+						has_country_flag = selected_refineries_construction
+					}
+					clr_country_flag = selected_refineries_construction
+				}
+			
+				IF = {
+					limit = {
+						has_country_flag = selected_special_construction
+					}
+					clr_country_flag = selected_special_construction
+				}
+			}
+			select_refineries_click = {
+				IF = {
+					limit = {
+						NOT = {
+							has_country_flag = selected_refineries_construction
+						}
+					}
+					set_country_flag = selected_refineries_construction
+				}
+
+				IF = {
+					limit = {
+						has_country_flag = selected_special_construction
+					}
+					clr_country_flag = selected_special_construction
+				}
+			}
+			select_special_click = {
+				IF = {
+					limit = {
+						NOT = {
+							has_country_flag = selected_special_construction
+						}
+					}
+					set_country_flag = selected_special_construction
+				}
+
+				IF = {
+					limit = {
+						has_country_flag = selected_refineries_construction
+					}
+					clr_country_flag = selected_refineries_construction
+				}
+			}
+		}
+
+	}
+
+	open_plj_ui = {
+		context_type = player_context
+		parent_window_token = construction_tab
+		window_name = "open_plj_ui_window"
+		properties = {
+		}
+		effects = {
+			open_plj_ui_button_click = {
+				ROOT = {
+					set_temp_variable = { show = 1 }
+					subtract_from_temp_variable = { show = show_plj }
+					set_variable = { show_plj = show }
+				}
+			}
+		}
+	}
+
+	plj_queue_factory_option_ui = {
+		context_type = player_context
+		parent_window_token = construction_tab
+		window_name = "plj_queue_factory_option_ui_window"
+		visible = {
+			IF = {
+				limit = { 
+					
+					OR = {
+						has_country_flag = selected_refineries_construction
+						has_country_flag = selected_special_construction
+						check_variable = { show_plj = 0 }
+					}
+				}
+			always = no
+			}
+			ELSE = {
+				always = yes
+			}
+		}
+		effects = {
+			queue_industrial_complex_click = {
+				plj_industrial_complex_selected = yes
+			}
+			queue_arms_factory_click = {
+				plj_arms_factory_selected = yes
+			}
+			queue_dockyard_click = {
+				plj_dockyard_selected = yes
+			}
+			queue_infrastructure_click = {
+				plj_infrastructure_selected = yes
+			}
+		}
+		triggers = {
+			queue_industrial_complex_click_enabled = {
+				any_owned_state = {
+					AND = {
+						free_building_slots = {
+							building = industrial_complex
+							size > 0
+							include_locked = no
+						}
+					}
+				}
+			}
+			queue_arms_factory_click_enabled = {
+				any_owned_state = {
+					AND = {
+						free_building_slots = {
+							building = arms_factory
+							size > 0
+							include_locked = no
+						}
+					}
+				}
+			}
+			queue_dockyard_click_enabled = {
+				any_owned_state = {
+					AND = {
+						free_building_slots = {
+							building = dockyard
+							size > 0
+							include_locked = no
+						}
+					}
+				}
+			}
+			queue_infrastructure_click_enabled = {
+				any_owned_state = {
+					AND = {
+						free_building_slots = {
+							building = infrastructure
+							size > 0
+							include_locked = no
+						}
+					}
+				}
+			}
+			building_industrial_complex_click_enabled = {
+				any_owned_state = {
+					AND = {
+						free_building_slots = {
+							building = industrial_complex
+							size > 0
+							include_locked = no
+						}
+					}
+				}
+			}
+			building_arms_factory_click_enabled = {
+				any_owned_state = {
+					AND = {
+						free_building_slots = {
+							building = arms_factory
+							size > 0
+							include_locked = no
+						}
+					}
+				}
+			}
+			building_dockyard_click_enabled = {
+				any_owned_state = {
+					AND = {
+						free_building_slots = {
+							building = dockyard
+							size > 0
+							include_locked = no
+						}
+					}
+				}
+			}
+			building_infrastructure_click_enabled = {
+				any_owned_state = {
+					AND = {
+						free_building_slots = {
+							building = infrastructure
+							size > 0
+							include_locked = no
+						}
+					}
+				}
+			}
+		}
+	}
+
+	plj_queue_refineries_option_ui = {
+		context_type = player_context
+		parent_window_token = construction_tab
+		window_name = "plj_queue_refineries_option_ui_window"
+		visible = {
+			IF = {
+				limit = { 
+					
+					OR = {
+						has_country_flag = selected_special_construction
+						NOT = {has_country_flag = selected_refineries_construction }
+						check_variable = { show_plj = 0 }
+					}
+				}
+			always = no
+			}
+			ELSE = {
+				always = yes
+			}
+		}
+		effects = {
+			queue_fuel_silo_click = {
+				plj_fuel_silo_selected = yes
+			}
+			queue_synthetic_refinery_click = {
+				plj_synthetic_refinery_selected = yes
+			}
+		}
+		triggers = {
+			queue_fuel_silo_click_enabled = {
+				any_owned_state = {
+					AND = {
+						free_building_slots = {
+							building = fuel_silo
+							size > 0
+							include_locked = no
+						}
+					}
+				}
+				has_tech = fuel_silos
+			}
+			queue_synthetic_refinery_click_enabled = {
+				any_owned_state = {
+					AND = {
+						free_building_slots = {
+							building = synthetic_refinery
+							size > 0
+							include_locked = no
+						}
+					}
+				}
+				has_tech = synth_oil_experiments 
+			}
+
+			building_fuel_silo_click_enabled = {
+				any_owned_state = {
+					AND = {
+						free_building_slots = {
+							building = fuel_silo
+							size > 0
+							include_locked = no
+						}
+					}
+				}
+				has_tech = fuel_silos
+			}
+			building_synthetic_refinery_click_enabled = {
+				any_owned_state = {
+					AND = {
+						free_building_slots = {
+							building = synthetic_refinery
+							size > 0
+							include_locked = no
+						}
+					}
+				}
+				has_tech = synth_oil_experiments 
+			}
+		}
+	}
+
+	plj_queue_special_option_ui = {
+		context_type = player_context
+		parent_window_token = construction_tab
+		window_name = "plj_queue_special_option_ui_window"
+		visible = {
+			IF = {
+				limit = { 
+					
+					OR = {
+						NOT = { has_country_flag = selected_special_construction }
+						has_country_flag = selected_refineries_construction
+						check_variable = { show_plj = 0 }
+					}
+				}
+			always = no
+			}
+			ELSE = {
+				always = yes
+			}
+		}
+		effects = {
+			queue_nuclear_reactor_click = {
+				plj_nuclear_reactor_selected = yes
+			}
+			queue_rocket_site_click = {
+				plj_rocket_site_selected = yes
+			}
+		}
+		triggers = {
+			queue_nuclear_reactor_click_enabled = {
+				any_owned_state = {
+					AND = {
+						free_building_slots = {
+							building = nuclear_reactor
+							size > 0
+							include_locked = no
+						}
+					}
+				}
+				has_tech = nuclear_reactor
+			}
+
+			queue_rocket_site_click_enabled = {
+				any_owned_state = {
+					AND = {
+						free_building_slots = {
+							building = rocket_site
+							size > 0
+							include_locked = no
+						}
+					}
+				}
+			}
+
+			building_nuclear_reactor_click_enabled = {
+				any_owned_state = {
+					AND = {
+						free_building_slots = {
+							building = nuclear_reactor
+							size > 0
+							include_locked = no
+						}
+					}
+				}
+				has_tech = nuclear_reactor
+			}
+
+			building_rocket_site_click_enabled = {
+				any_owned_state = {
+					AND = {
+						free_building_slots = {
+							building = rocket_site
+							size > 0
+							include_locked = no
+						}
+					}
+				}
+			}
+		}
+	}
+
+}
